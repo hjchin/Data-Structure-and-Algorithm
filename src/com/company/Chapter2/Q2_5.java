@@ -61,4 +61,37 @@ public class Q2_5 {
 
         return answerList;
     }
+
+    public static Node sum2(Node node1, Node node2, int carry){
+
+        int sum = calc(node1, node2, carry);
+        int digit = sum % 10;
+        int carryOver = sum/10;
+
+        Node aNode = new Node();
+        aNode.value = digit;
+
+        if(node1 != null || node2 != null || carry != 0){
+            Node next1 = node1 != null ? node1.next : null;
+            Node next2 = node2 != null ? node2.next : null;
+            aNode.next = sum2(next1, next2, carryOver);
+        }else if(digit == 0){
+            aNode = null;
+        }
+
+        return aNode;
+    }
+
+    public static int calc(Node n1, Node n2, int carry){
+        if(n1 != null && n2 != null){
+            return n1.value + n2.value + carry;
+        }else if(n1 != null){
+            return n1.value + carry;
+        }else if(n2 != null){
+            return n2.value + carry;
+        }else{
+            return carry;
+        }
+    }
+
 }

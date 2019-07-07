@@ -30,4 +30,21 @@ public class Q2_8Test {
         assertEquals(n2.hashCode(), Q2_8.detectLoopNode(list).hashCode());
     }
 
+    @Test
+    public void test2(){
+        LinkedList list = new LinkedList();
+
+        Node n5 = new Node();
+        Node n4 = new Node();
+        Node n3 = new Node();
+        Node n2 = new Node();
+        Node n1 = new Node();
+        n4.next = n5;
+        n3.next = n4;
+        n2.next = n3;
+        n1.next = n2;
+        list.head = n1;
+
+        assertEquals(null, Q2_8.detectLoopNode(list));
+    }
 }

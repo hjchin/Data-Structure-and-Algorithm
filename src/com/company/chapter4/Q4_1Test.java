@@ -68,4 +68,28 @@ public class Q4_1Test {
 
         assertTrue(Q4_1.isConnected(n1, n2));
     }
+
+    @Test
+    public void test4(){
+        GraphNode n1 = new GraphNode("n1");
+        GraphNode n2 = new GraphNode("n2");
+        GraphNode n3 = new GraphNode("n3");
+
+        n3.nodes = new GraphNode[]{
+                new GraphNode("n5")
+        };
+
+        GraphNode n4 = new GraphNode("n4");
+        n4.nodes = new GraphNode[]{
+                new GraphNode("n6"),
+                new GraphNode("n7")
+        };
+
+        n1.nodes = new GraphNode[]{
+                n3,
+                n4
+        };
+
+        assertFalse(Q4_1.isConnected(n1, n2));
+    }
 }

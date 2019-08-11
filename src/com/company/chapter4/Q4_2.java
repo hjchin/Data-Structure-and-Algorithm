@@ -1,11 +1,6 @@
 package com.company.chapter4;
 
-import com.company.chapter3.Q3_4;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Queue;
 
 public class Q4_2 {
 

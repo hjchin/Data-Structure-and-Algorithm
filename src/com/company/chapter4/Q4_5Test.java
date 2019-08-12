@@ -69,6 +69,7 @@ public class Q4_5Test {
         assertTrue(Q4_5.checkBinaryTree(node));
     }
 
+    @Test
     public void test9(){
         TreeNode node = new TreeNode(10);
         node.leftNode = new TreeNode(4);

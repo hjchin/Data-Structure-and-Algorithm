@@ -7,16 +7,16 @@ import static java.util.Objects.isNull;
 public class Q4_6 {
 
     public static TreeNode getNextNode(TreeNode root, TreeNode target){
-        ArrayList<TreeNode> tracker = new ArrayList<>();
-        tracker.add(root);
-        return traverse(tracker,root,target);
+        ArrayList<TreeNode> parents = new ArrayList<>();
+        parents.add(null);
+        return traverse(parents,root,target);
     }
 
-    public static TreeNode traverse(ArrayList<TreeNode> tracker, TreeNode node, TreeNode target){
+    public static TreeNode traverse(ArrayList<TreeNode> parents, TreeNode node, TreeNode target){
 
         if(isNull(node)) return null;
 
-        TreeNode parent = getParentOf(tracker, node);
+        TreeNode parent = getParentOf(parents, node);
 
         if(!isNull(node.leftNode) && !node.leftNode.visited){
             if(node.leftNode.compare(target)){
@@ -26,11 +26,13 @@ public class Q4_6 {
             node.leftNode.visited = true;
 
             if(!isNull(node.leftNode.leftNode) && !node.leftNode.leftNode.visited){
-                tracker.add(node.leftNode);
-                return traverse(tracker, node.leftNode, target);
+                parents.add(node);
+                return traverse(parents, node.leftNode, target);
+            }else if(!isNull(node.leftNode.rightNode)){
+                parents.add(node);
+                return traverse(parents, node.leftNode, target);
             }else{
-                stepBack(tracker);
-                return traverse(tracker, parent, target);
+                return traverse(parents, node, target);
             }
         }
 
@@ -41,33 +43,32 @@ public class Q4_6 {
         if(!isNull(node.rightNode) && !node.rightNode.visited){
             node.visited = true;
             if(node.rightNode.compare(target)){
-                return getParentOf(tracker, parent);
+                return getParentOf(parents, node);
             }else{
-                TreeNode pp = getParentOf(tracker, parent);
-                stepBack(tracker);
-                return traverse(tracker, pp, target);
+                TreeNode pp = getParentOf(parents, parent);
+                return traverse(parents, pp, target);
             }
         }
 
         return null;
     }
 
-    private static void stepBack(ArrayList<TreeNode> list){
-        if(list.size()>0){
-            list.remove(list.size()-1);
-        }
-    }
+    private static TreeNode getParentOf(ArrayList<TreeNode> parents, TreeNode node){
 
-    private static TreeNode getParentOf(ArrayList<TreeNode> list, TreeNode node){
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).compare(node)){
-                if(list.size() < i-1)
-                    return list.get(i-1);
-                else
-                    return null;
+        for(int i=0;i<parents.size();i++){
+            if(!isNull(parents.get(i)) && parents.get(i).compare(node)){
+                int j = i - 1;
+                if(j<parents.size()){
+                    return parents.get(j);
+                }
+                return null;
             }
         }
-        return null;
+
+        if(parents.size()-1 >= 0){
+            return parents.get(parents.size()-1);
+        }else
+            return null;
     }
 
 

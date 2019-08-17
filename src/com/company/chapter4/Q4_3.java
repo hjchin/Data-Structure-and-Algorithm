@@ -35,8 +35,8 @@ public class Q4_3 {
             masterList.set(level-1,list);
         }
 
-        if(node.leftNode != null) pointer.add(new Pair<>(level+1, node.leftNode));
-        if(node.rightNode != null) pointer.add(new Pair<>(level+1, node.rightNode));
+        if(node.left != null) pointer.add(new Pair<>(level+1, node.left));
+        if(node.right != null) pointer.add(new Pair<>(level+1, node.right));
         if(pointer.size()>0){
             create(masterList, pointer);
         }

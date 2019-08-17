@@ -3,9 +3,8 @@ package com.company.chapter4;
 public class TreeNode {
 
     public int value;
-    public TreeNode leftNode;
-    public TreeNode rightNode;
-    public boolean visited = false;
+    public TreeNode left;
+    public TreeNode right;
 
     public TreeNode(int value){
         this.value = value;

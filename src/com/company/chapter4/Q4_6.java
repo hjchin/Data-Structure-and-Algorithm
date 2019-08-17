@@ -6,9 +6,9 @@ public class Q4_6 {
 
     public static void inOrderTraverse(TreeNode node){
         if(isNull(node)) return;
-        inOrderTraverse(node.leftNode);
+        inOrderTraverse(node.left);
         System.out.println("node "+node.value);
-        inOrderTraverse(node.rightNode);
+        inOrderTraverse(node.right);
     }
 
     private Boolean found = false;
@@ -25,7 +25,7 @@ public class Q4_6 {
     private void searchInOrder(TreeNode node){
         if(isNull(node) || !isNull(nextNode)) return;
 
-        searchInOrder(node.leftNode);
+        searchInOrder(node.left);
 
         System.out.println("node "+node.value);
 
@@ -36,7 +36,7 @@ public class Q4_6 {
             if(isNull(nextNode)) nextNode = node;
         }
 
-        searchInOrder(node.rightNode);
+        searchInOrder(node.right);
     }
 
     public TreeNode getNextNode(){

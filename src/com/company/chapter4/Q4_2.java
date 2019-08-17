@@ -15,11 +15,11 @@ public class Q4_2 {
                 node = new TreeNode(array[i]);
                 pointer = node;
             }else if(i%2 != 0){
-                pointer.leftNode = new TreeNode(array[i]);
-                list.add(pointer.leftNode);
+                pointer.left = new TreeNode(array[i]);
+                list.add(pointer.left);
             }else{
-                pointer.rightNode = new TreeNode(array[i]);
-                list.add(pointer.rightNode);
+                pointer.right = new TreeNode(array[i]);
+                list.add(pointer.right);
                 pointer = list.remove(0);
             }
         }

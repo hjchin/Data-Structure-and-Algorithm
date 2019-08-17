@@ -7,18 +7,18 @@ public class Q4_5 {
         if(node == null) return false;
 
         Integer v = node.value;
-        Integer vl = node.leftNode != null ? node.leftNode.value : null;
-        Integer vr = node.rightNode != null ? node.rightNode.value : null;
+        Integer vl = node.left != null ? node.left.value : null;
+        Integer vr = node.right != null ? node.right.value : null;
 
         if(vl != null && v < vl) return false;
         if(vr != null && vr < v) return false;
 
         if(vl != null && vr != null){
-            return checkBinaryTree(node.leftNode) && checkBinaryTree(node.rightNode);
+            return checkBinaryTree(node.left) && checkBinaryTree(node.right);
         }else if(vl != null){
-            return checkBinaryTree(node.leftNode);
+            return checkBinaryTree(node.left);
         }else if(vr != null){
-            return checkBinaryTree(node.rightNode);
+            return checkBinaryTree(node.right);
         }else
             return true;
     }

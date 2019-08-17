@@ -18,8 +18,8 @@ public class Q4_6Test {
     @Test
     public void testInOrderTraverse1(){
         TreeNode root = new TreeNode(10);
-        root.leftNode = new TreeNode(8);
-        root.rightNode = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(20);
         Q4_6.inOrderTraverse(root);
         assertTrue(true);
     }
@@ -27,10 +27,10 @@ public class Q4_6Test {
     @Test
     public void testInOrderTraverse2(){
         TreeNode root = new TreeNode(10);
-        root.leftNode = new TreeNode(8);
-        root.leftNode.leftNode = new TreeNode(7);
-        root.leftNode.rightNode = new TreeNode(9);
-        root.rightNode = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.left.left = new TreeNode(7);
+        root.left.right = new TreeNode(9);
+        root.right = new TreeNode(20);
         Q4_6.inOrderTraverse(root);
         assertTrue(true);
     }
@@ -57,7 +57,7 @@ public class Q4_6Test {
 
         TreeNode root = new TreeNode(10);
         TreeNode nl = new TreeNode(8);
-        root.leftNode = nl;
+        root.left = nl;
 
         Q4_6 Q4_6 = new Q4_6();
         Q4_6.searchNextNode(root, nl);
@@ -79,8 +79,8 @@ public class Q4_6Test {
         TreeNode root = new TreeNode(10);
         TreeNode nl = new TreeNode(8);
         TreeNode nr = new TreeNode(20);
-        root.leftNode = nl;
-        root.rightNode = nr;
+        root.left = nl;
+        root.right = nr;
 
         Q4_6 Q4_6 = new Q4_6();
         Q4_6.searchNextNode(root, root);
@@ -102,9 +102,9 @@ public class Q4_6Test {
         TreeNode nl = new TreeNode(10);
         TreeNode nr = new TreeNode(30);
         TreeNode nll = new TreeNode(4);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.leftNode.leftNode = nll;
+        root.left = nl;
+        root.right = nr;
+        root.left.left = nll;
 
         Q4_6 Q4_6 = new Q4_6();
         Q4_6.searchNextNode(root, nll);
@@ -133,12 +133,12 @@ public class Q4_6Test {
         TreeNode nr = new TreeNode(30);
         TreeNode nll = new TreeNode(4);
         TreeNode nlr = new TreeNode(12);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.leftNode.leftNode = nll;
-        root.leftNode.rightNode = nlr;
+        root.left = nl;
+        root.right = nr;
+        root.left.left = nll;
+        root.left.right = nlr;
         Q4_6 Q4_6 = new Q4_6();
-        Q4_6.searchNextNode(root, root.leftNode.rightNode);
+        Q4_6.searchNextNode(root, root.left.right);
         assertEquals(root, Q4_6.getNextNode());
     }
 
@@ -157,11 +157,11 @@ public class Q4_6Test {
         TreeNode nl = new TreeNode(10);
         TreeNode nr = new TreeNode(30);
         TreeNode nlr = new TreeNode(12);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.leftNode.rightNode = nlr;
+        root.left = nl;
+        root.right = nr;
+        root.left.right = nlr;
         Q4_6 Q4_6 = new Q4_6();
-        Q4_6.searchNextNode(root, root.leftNode.rightNode);
+        Q4_6.searchNextNode(root, root.left.right);
         assertEquals(root, Q4_6.getNextNode());
 
         Q4_6.searchNextNode(root, nr);
@@ -183,9 +183,9 @@ public class Q4_6Test {
         TreeNode nl = new TreeNode(10);
         TreeNode nr = new TreeNode(30);
         TreeNode nrl = new TreeNode(29);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.rightNode.leftNode = nrl;
+        root.left = nl;
+        root.right = nr;
+        root.right.left = nrl;
         Q4_6 Q4_6 = new Q4_6();
         Q4_6.searchNextNode(root, nrl);
         assertEquals(nr, Q4_6.getNextNode());
@@ -210,10 +210,10 @@ public class Q4_6Test {
         TreeNode nr = new TreeNode(30);
         TreeNode nrl = new TreeNode(29);
         TreeNode nrr = new TreeNode(35);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.rightNode.leftNode = nrl;
-        root.rightNode.rightNode = nrr;
+        root.left = nl;
+        root.right = nr;
+        root.right.left = nrl;
+        root.right.right = nrr;
 
         Q4_6 Q4_6 = new Q4_6();
 
@@ -239,9 +239,9 @@ public class Q4_6Test {
         TreeNode nl = new TreeNode(10);
         TreeNode nr = new TreeNode(30);
         TreeNode nrr = new TreeNode(35);
-        root.leftNode = nl;
-        root.rightNode = nr;
-        root.rightNode.rightNode = nrr;
+        root.left = nl;
+        root.right = nr;
+        root.right.right = nrr;
 
         Q4_6 Q4_6 = new Q4_6();
 

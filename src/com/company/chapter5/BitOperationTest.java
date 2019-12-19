@@ -107,6 +107,10 @@ public class BitOperationTest {
 
         value = BitOperation.convertDecimalToBinary(0.37, 10);
         assertEquals("0.0101111010", value);
+
+        value = BitOperation.convertDecimalToBinary(0.1, 10);
+        assertEquals("0.0001100110", value);
+
     }
 
     @Test
@@ -135,6 +139,8 @@ public class BitOperationTest {
         value = BitOperation.convertFractionalBinaryToDecimal("0.111000");
         assertEquals(0.875d, value);
     }
+
+
 
 
 

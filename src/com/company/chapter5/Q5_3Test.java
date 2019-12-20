@@ -43,7 +43,6 @@ public class Q5_3Test {
 
         value = Q5_3.getLongestBit("11011101111");
         assertEquals(8,value);
-
     }
 
 }

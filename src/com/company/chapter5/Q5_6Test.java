@@ -15,7 +15,7 @@ public class Q5_6Test {
 
     @Test
     public void testConvert(){
-        //assertEquals(2, Q5_6.convert(29,15));
+        assertEquals(2, Q5_6.convert(29,15));
         assertEquals(8, Q5_6.convert(290,15));
     }
 }

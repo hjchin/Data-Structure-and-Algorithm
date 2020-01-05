@@ -1,5 +1,7 @@
 package com.company.chapter4;
 
+import com.company.chapter4.tree.TreeNode;
+
 public class Q4_4 {
 
     public static boolean isBalanced(TreeNode node){

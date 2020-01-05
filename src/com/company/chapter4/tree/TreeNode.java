@@ -1,4 +1,4 @@
-package com.company.chapter4;
+package com.company.chapter4.tree;
 
 public class TreeNode {
 

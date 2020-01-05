@@ -1,5 +1,6 @@
 package com.company.chapter4;
 
+import com.company.chapter4.graph.GraphNode;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

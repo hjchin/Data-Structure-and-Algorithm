@@ -1,5 +1,7 @@
 package com.company.chapter4;
 
+import com.company.chapter4.tree.TreeNode;
+
 public class Q4_5 {
 
     public static boolean checkBinaryTree(TreeNode node){

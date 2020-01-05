@@ -1,5 +1,7 @@
 package com.company.chapter4;
 
+import com.company.chapter4.tree.TreeNode;
+
 import java.util.ArrayList;
 
 public class Q4_2 {

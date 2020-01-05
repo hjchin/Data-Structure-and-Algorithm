@@ -1,5 +1,7 @@
 package com.company.chapter4;
 
+import com.company.chapter4.graph.GraphNode;
+
 public class Q4_1 {
 
     public static boolean isConnected(GraphNode n1, GraphNode n2){

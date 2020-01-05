@@ -1,5 +1,7 @@
 package com.company.chapter4;
 
+import com.company.chapter4.tree.TreeNode;
+
 import static java.util.Objects.isNull;
 
 public class Q4_6 {

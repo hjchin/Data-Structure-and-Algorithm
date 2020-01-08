@@ -15,6 +15,8 @@ public class GraphSearchTest {
             n2      n3
           /   \    /  \
          n4   n5  n6   n7
+
+         n1, n2, n4, n5, n3 ,n6, n7
      */
 
     public GraphNode createSampleGraph(){

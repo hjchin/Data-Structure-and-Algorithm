@@ -8,8 +8,8 @@ import java.util.Stack;
 public class Q4_8 {
 
     public static TreeNode getCommonAncestor(TreeNode tree, TreeNode node1, TreeNode node2){
-        //if(tree == null) return null;
-        if(tree == null || tree.value == node1.value || tree.value == node2.value){
+        if(tree == null) return null;
+        if(tree.value == node1.value || tree.value == node2.value){
             return tree;
         }
 

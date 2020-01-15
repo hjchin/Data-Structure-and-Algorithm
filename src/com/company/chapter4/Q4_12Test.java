@@ -62,4 +62,49 @@ public class Q4_12Test {
         Q4_12.countPath(tree, 8, 0);
         assertEquals(3, Q4_12.pathCount);
     }
+
+    /*
+                   1
+                /     \
+              3        -1
+            /   \     /   \
+           2     1   4     5
+                /   / \     \
+               1   1   2     6
+
+
+     */
+    public Q4_12.GFG.Node createSampleTree2(){
+        Q4_12.GFG.Node root = new Q4_12.GFG.Node(1);
+        Q4_12.GFG.Node n3 = new Q4_12.GFG.Node(3);
+        Q4_12.GFG.Node nN1 = new Q4_12.GFG.Node(-1);
+        Q4_12.GFG.Node n2 = new Q4_12.GFG.Node(2);
+        Q4_12.GFG.Node n1 = new Q4_12.GFG.Node(1);
+        Q4_12.GFG.Node n4 = new Q4_12.GFG.Node(4);
+        Q4_12.GFG.Node n5 = new Q4_12.GFG.Node(5);
+        Q4_12.GFG.Node n1_2 = new Q4_12.GFG.Node(1);
+        Q4_12.GFG.Node n1_3 = new Q4_12.GFG.Node(1);
+        Q4_12.GFG.Node n2_2 = new Q4_12.GFG.Node(2);
+        Q4_12.GFG.Node n6 = new Q4_12.GFG.Node(6);
+
+        root.left = n3;
+        root.right = nN1;
+        n3.left = n2;
+        n3.right = n1;
+        nN1.left = n4;
+        nN1.right = n5;
+        n1.left = n1_2;
+        n4.left = n1_3;
+        n4.right = n2_2;
+        n5.right = n6;
+
+        return root;
+    }
+
+    @Test
+    public void testGFG(){
+        Q4_12.GFG.Node tree = createSampleTree2();
+        Q4_12.GFG.printKPath(tree, 5);
+    }
+
 }

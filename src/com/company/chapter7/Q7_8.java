@@ -32,7 +32,7 @@ public class Q7_8 {
                 presenter.showMessage("not allow to place Othello");
                 return;
             }
-            
+
             board.placeOthello(coordinate, new Board.Othello(player.othelloFace));
             calculateNewState();
 

@@ -36,7 +36,7 @@ public class Q7_10 {
                 gameEnd = true;
             }
         }
-        
+
         int getUnearthBombCount(){
             return unearthBombCount;
         }

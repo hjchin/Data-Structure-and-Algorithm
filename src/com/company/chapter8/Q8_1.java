@@ -1,5 +1,7 @@
 package com.company.chapter8;
 
+import java.util.Arrays;
+
 public class Q8_1 {
 
     /*
@@ -35,6 +37,25 @@ public class Q8_1 {
             return 1;
         }else
             return getStep(n-1) + getStep(n-2)+getStep(n-3);
+    }
+
+    private static int getStepWCache(int n, int[] cache){
+        if(n < 0) {
+            return 0;
+        }else if(n==0){
+            return 1;
+        }else if(cache[n] > -1){
+            return cache[n];
+        }else {
+            cache[n]= getStepWCache(n-1, cache)+getStepWCache(n-2,cache)+getStepWCache(n-3, cache);
+            return cache[n];
+        }
+    }
+
+    public static int getStepWithCache(int n){
+        int[] cache = new int[n+1];
+        Arrays.fill(cache, -1);
+        return getStepWCache(n, cache);
     }
 
 }

@@ -45,5 +45,24 @@ public class Q8_3 {
         }
     }
 
+    public static int getMagicIndexWithBinaryApproach2(int[] input, int startIndex, int endIndex){
 
+        int midIndex = (endIndex - startIndex)/2 + startIndex;
+
+        if(midIndex == startIndex) return -1;
+
+        if(input[midIndex] == midIndex) return midIndex;
+
+        int value = getMagicIndexWithBinaryApproach2(input, startIndex, midIndex);
+        if(value > -1){
+            return value;
+        }
+
+        value = getMagicIndexWithBinaryApproach(input, midIndex, endIndex);
+        if(value > -1){
+            return value;
+        }
+
+        return -1;
+    }
 }

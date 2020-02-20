@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 public class Q8_5Test {
 
-
     @Test
     public void testMultiply(){
         assertEquals(5,Q8_5.multiply(1,5));

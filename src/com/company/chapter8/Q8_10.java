@@ -25,7 +25,7 @@ public class Q8_10 {
         if (r < 0 || r >= screen.length || c < 0 || c >= screen[0].length) {
             return false;
         }
-        
+
         if (screen[r][c] == ocolor){
             screen[r][c] = ncolor;
             PaintFill(screen, r - 1,c, ocolor, ncolor);

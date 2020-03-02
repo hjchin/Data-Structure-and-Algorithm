@@ -3,15 +3,18 @@ package com.company.chapter10;
 public class MergeSort {
 
 
-    public static void sort(int[] array){
+    public static int[] sort(int[] array){
         sort(array, 0, array.length-1);
+        return array;
     }
 
     public static void sort(int[] array, int start, int end){
-        int middle = (start+end)/2;
-        sort(array,start, middle);
-        sort(array,middle+1, end );
-        merge(array, start, middle, end);
+        if(start < end){
+            int middle = (start+end)/2;
+            sort(array,start, middle);
+            sort(array,middle+1, end );
+            merge(array, start, middle, end);
+        }
     }
 
     /*

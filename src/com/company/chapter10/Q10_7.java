@@ -11,7 +11,7 @@ package com.company.chapter10;
 public class Q10_7 {
 
 
-    public static void findOpenNumner() {
+    public static void findOpenNumber() {
 
         long numberOflnts = ((long) Integer.MAX_VALUE) + 1;
         byte[] bitfield = new byte[(int) (numberOflnts / 8)];

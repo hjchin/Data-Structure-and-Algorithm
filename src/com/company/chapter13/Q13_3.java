@@ -10,7 +10,8 @@ package com.company.chapter13;
 
     finally - use to logic branch to execute regardless there is any exception occurs in try/catch block
 
-    finalize - garbage collector call finalize to release memory and destroy resource.
+    finalize - This method is used to perform some final operations or clean up operations on an object before it is
+               removed from the memory.
  */
 public class Q13_3 {
 }

@@ -2,6 +2,9 @@ package com.company.chapter3;
 
 import java.util.Stack;
 
+/*
+    Queue via Stacks: Implement a MyQueue class which implements a queue using two stacks.
+ */
 public class Q3_4 {
 
     public static class MyQueue{

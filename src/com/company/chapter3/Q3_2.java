@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Q3_2 {
 
+    /*
+    Stack Min: How would you design a stack which, in addition to push and pop, has a function min
+    which returns the minimum element? Push, pop and min should all operate in 0(1) time.
+     */
     public static class Stack{
 
         private ArrayList<Integer> list = new ArrayList<>();

@@ -6,6 +6,12 @@ import java.util.LinkedList;
 
 public class Q2_1 {
 
+    /*
+    R�mov� Dups! Write code to remove duplicates from an unsorted linked list.
+    FOLLOW UP
+    How would you solve this problem if a temporary buffer is not allowed?
+     */
+
     public static LinkedList<Integer> removeDuplicate(LinkedList<Integer> list){
 
         Iterator<Integer> iterator = list.iterator();

@@ -5,6 +5,12 @@ import com.company.chapter4.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Random;
 
+/*
+    Random Node: You are implementing a binary tree class from scratch which, in addition to
+    insert, find, and delete, has a method getRandomNode() which returns a random node
+    from the tree. All nodes should be equally likely to be chosen. Design and implement an algorithm
+    for getRandomNode, and explain how you would implement the rest of the methods.
+ */
 public class Q4_11 {
 
 
@@ -14,44 +20,44 @@ public class Q4_11 {
         private int size = 0;
         private ArrayList<TreeNode> nodeList = new ArrayList<>();
 
-        public int getSize(){
+        public int getSize() {
             return size;
         }
 
-        public BinarySearchTree(TreeNode root){
+        public BinarySearchTree(TreeNode root) {
             this.root = root;
             addNode(root);
         }
 
-        public void insert(TreeNode node){
+        public void insert(TreeNode node) {
             insertNewNode(root, node);
             size++;
         }
 
-        public TreeNode find(TreeNode node){
+        public TreeNode find(TreeNode node) {
             searchNode = null;
             searchNode(root, node);
             return searchNode;
         }
 
-        public void delete(TreeNode node){
+        public void delete(TreeNode node) {
 
             searchNode = null;
             searchNodeParent = null;
 
             searchNode(root, node);
-            if(searchNode == null){
+            if (searchNode == null) {
                 return;
             }
 
-            if(searchNode.left == null && searchNode.right == null){
-                if(searchNodeParent.left != null && searchNodeParent.left.value == node.value){
+            if (searchNode.left == null && searchNode.right == null) {
+                if (searchNodeParent.left != null && searchNodeParent.left.value == node.value) {
                     nodeList.remove(searchNodeParent.left);
                     searchNodeParent.left = null;
                     size--;
                 }
 
-                if(searchNodeParent.right != null && searchNodeParent.right.value == node.value){
+                if (searchNodeParent.right != null && searchNodeParent.right.value == node.value) {
                     nodeList.remove(searchNodeParent.right);
                     searchNodeParent.right = null;
                     size--;
@@ -59,13 +65,13 @@ public class Q4_11 {
                 return;
             }
 
-            if(searchNode.left != null){
+            if (searchNode.left != null) {
                 getNextMax(searchNode.left);
-                if(nextMaxNodeParent != null){
+                if (nextMaxNodeParent != null) {
                     searchNode.value = nextMaxNodeParent.right.value;
                     nodeList.remove(nextMaxNodeParent.right);
                     nextMaxNodeParent.right = null;
-                }else{
+                } else {
                     searchNode.value = searchNode.left.value;
                     nodeList.remove(searchNode.left);
                     searchNode.left = null;
@@ -74,14 +80,14 @@ public class Q4_11 {
                 return;
             }
 
-            if(searchNode.right != null){
-                if(searchNodeParent.left.value == node.value){
+            if (searchNode.right != null) {
+                if (searchNodeParent.left.value == node.value) {
                     searchNodeParent.left = searchNode.right;
                     nodeList.remove(searchNodeParent.left.right);
                     searchNodeParent.left.right = null;
                 }
 
-                if(searchNodeParent.right.value == node.value){
+                if (searchNodeParent.right.value == node.value) {
                     searchNodeParent.right = searchNode.right;
                     nodeList.remove(searchNodeParent.right);
                     searchNodeParent.right.right = null;
@@ -91,9 +97,9 @@ public class Q4_11 {
             }
         }
 
-        public static void getNextMax(TreeNode node){
-            if(node == null) return;
-            if(node.right != null){
+        public static void getNextMax(TreeNode node) {
+            if (node == null) return;
+            if (node.right != null) {
                 nextMaxNodeParent = node;
                 getNextMax(node.right);
             }
@@ -101,25 +107,25 @@ public class Q4_11 {
 
         static TreeNode nextMaxNodeParent;
 
-        public TreeNode getRandomNode(){
+        public TreeNode getRandomNode() {
             Random r = new Random();
             int index = r.nextInt(nodeList.size());
             return nodeList.get(index);
         }
 
-        public static void searchNode(TreeNode node, TreeNode target){
-            if(node == null) return;
+        public static void searchNode(TreeNode node, TreeNode target) {
+            if (node == null) return;
 
-            if(node.value == target.value){
+            if (node.value == target.value) {
                 searchNode = node;
                 return;
             }
 
             TreeNode sideNode;
-            if(target.value > node.value){
+            if (target.value > node.value) {
                 searchNodeParent = node;
                 sideNode = node.right;
-            }else {
+            } else {
                 searchNodeParent = node;
                 sideNode = node.left;
             }
@@ -130,29 +136,29 @@ public class Q4_11 {
         static TreeNode searchNodeParent;
         static TreeNode searchNode;
 
-        public static void insertNewNode(TreeNode node, TreeNode newNode){
+        public static void insertNewNode(TreeNode node, TreeNode newNode) {
             lastParentNode = null;
             traverse(node, newNode);
-            if(newNode.value > lastParentNode.value){
+            if (newNode.value > lastParentNode.value) {
                 lastParentNode.right = newNode;
-            }else{
+            } else {
                 lastParentNode.left = newNode;
             }
         }
 
-        public static void traverse(TreeNode node, TreeNode newNode){
-            if(node == null) return;
-            if(newNode.value > node.value){
+        public static void traverse(TreeNode node, TreeNode newNode) {
+            if (node == null) return;
+            if (newNode.value > node.value) {
                 lastParentNode = node;
                 insertNewNode(node.right, newNode);
-            }else{
+            } else {
                 lastParentNode = node;
                 insertNewNode(node.left, newNode);
             }
         }
 
-        private void addNode(TreeNode node){
-            if(node == null) return;
+        private void addNode(TreeNode node) {
+            if (node == null) return;
             size++;
             nodeList.add(node);
             addNode(node.left);

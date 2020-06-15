@@ -44,7 +44,7 @@ public class Q6_10 {
      0        0       0       b1
    tube1    tube2   tube3   tube4
 
-   Strip tests all tube and tube4 turn out to be positive.
+   Strip tests all tube and tube2 turn out to be positive.
 
      0       1       0        0  = b4 is poisonous. Use the same approach for 1000 bottles and 10 strips.
 

@@ -44,6 +44,13 @@ public class BitOperation {
         return maskLeft(j) | maskRight(i);
     }
 
+    /*
+        int     bin
+        1       1
+        2       10
+        3       11
+        4       100
+     */
     static String convertIntegerToBinary(int value){
 
         String binary = "";
